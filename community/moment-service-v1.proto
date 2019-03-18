@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package ycode.comunity.moment.api.v1;
+
+option go_package = "ycode.me/ycodeapis/community/v1;community";
+
+service CommunityService {
+    rpc CreateMoment(CreateMomentRequest ) returns (CreateMomentResponse);
+}
+
+
+// Define general Moment type
+message CreateMomentRequest {
+
+    /* // What type of Monent */
+    /* enum Type { */
+    /*     DEFAULT = 0; // Text, image, video */
+    /*     ACTIVITY = 1; */
+    /*     SKU = 2; */
+    /* } */
+    /*  */
+    /* Type of = 1; */
+    string post_by = 1;
+    string short_text = 2;
+    repeated Media media = 3;
+}
+
+// Image or video 
+message Media {
+    enum Type {
+        JPG   = 0;
+        PNG   = 1;
+        VIDEO = 2;
+        GIF   = 3;
+    }
+    Type typeOf     = 1;
+    string location = 2;
+}
+
+message CreateMomentResponse{
+    string resource_name = 1;
+}
+
+
+
