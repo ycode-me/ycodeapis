@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package ycode.comunity.moment.api.v1;
 
-option go_package = "ycode.me/ycodeapis/community/v1;community";
+option go_package = "github.com/ycode-me/ycodeapis/community/v1;community";
 
 service CommunityService {
     rpc CreateMoment(CreateMomentRequest ) returns (CreateMomentResponse);
